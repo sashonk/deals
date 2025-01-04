@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: "DealsCompose"
+  datasource:
+    url: "jdbc:postgresql://deals-db:5432/spring-user?username=spring-user&password=apppw"
+    username: "spring-user"
+    password: "apppw"
+    driver-class-name: org.postgresql.Driver
+  jpa: 
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+  kafka:
+    bootstrap-servers: kafka:9093
+    concurrency: ${SPRING_KAFKA_CONCURRENCY}
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+deals:
+  checker:
+    rest:
+      url: ${DEALS_CHECKER_REST_URL}
