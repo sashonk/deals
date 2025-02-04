@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface BrokerDealRepository extends JpaRepository<BrokerDealEntity, Long> {
 
-    @Query(nativeQuery = true, value = "select * from broker_deal where status_id = :statusId for update order by id limit 100")
+    @Query(nativeQuery = true, value = "select * from broker_deal where status_id = :statusId for update limit 100")
     List<BrokerDealEntity> findByStatusId(Integer statusId);
 }

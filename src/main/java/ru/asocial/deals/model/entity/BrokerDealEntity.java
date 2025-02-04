@@ -52,17 +52,6 @@ public class BrokerDealEntity {
     @Column(name = "partition_id")
     private Integer partitionId;
 
-    @Column
-    private Long offset;
-
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
     public Integer getPartitionId() {
         return partitionId;
     }

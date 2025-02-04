@@ -45,6 +45,7 @@ public class CheckingService {
         }
         else {
             entity.setStatusId(BrokerDealStatus.ERROR.getId());
+            entity.setReason(result);
         }
         log.debug("deal check status: " + result);
     }
