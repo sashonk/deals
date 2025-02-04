@@ -1,0 +1,17 @@
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $to = 'medeya@umka-centr.ru';
+    $subject = 'Hello from PHP';
+    $message = '<html><body>';
+    $message .= '<h1>Hello!</h1>';
+    $message .= '<p>This is a test email sent from PHP.</p>';
+    $message .= '</body></html>';
+    $headers = 'From: medeya@umka-centr.ru';
+    $headers .= "\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8";
+    $isSent = mail($to, $subject, $message, $headers);
+    if ($isSent) {
+        echo 'Email sent successfully.';
+    } else {
+        echo 'Failed to send the email.';
+    }
+}
